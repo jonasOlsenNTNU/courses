@@ -1,0 +1,41 @@
+
+Design Guidelines:
+
+1- Simplicity
+    -Max 3 colors
+    -Easy to read typefaces
+    -Functional graphics
+2. Visual Hierarchy
+    -Place most important elements where attention gravitates
+3. Navigability
+    -Simple navigation scheme near top of page
+    -Consider breadcrumbs (Homepage < Course < ...) for backtracking
+    -Searchbar near top
+    -Limit navigation options. Don't overload the user with options
+    -Don't make the website too deep. Everything should be few clicks away from homepage.
+    -Top/header navigation menu should remain consistent on every site.
+4. Consistency
+    -Keep the same look and feel across the board.
+        -Color scheme, typefaces, background, ...
+5. Responsivity
+    -Website responsive to different mediums (phone, computer, ...)
+6. Accessibility
+    -WCAG (Web Content Accessibility Guidelines)
+        -Perceivable (Element sizes)
+        -Operable (Multiple modes of engagement)
+        -Understandable (Content easy to understand regardless of background)
+        -Robust (Hard to make mistakes / easy to fix mistakes)
+7. Conventionality
+    -Keep to conventional standards
+        -Main navigation at top
+        -Logo top left
+        -Logo clickable (homepage)
+        -Links and buttons change color when hovering
+        -Shopping cart + number of items in shopping cart on icon
+8. Credibility
+    -Easy to access information about "us" (About page). Explain to the user who we are.
+    -Easy to access pricing information.
+    -Reputable payment options.
+9. User-centricity
+    -Gather feedback from users
+    -Value feedback over own opinions
