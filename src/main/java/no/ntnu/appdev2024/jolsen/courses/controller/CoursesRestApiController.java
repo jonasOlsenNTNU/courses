@@ -15,12 +15,12 @@ public class CoursesRestApiController {
     @Autowired
     CoursesService coursesService;
 
-    @GetMapping("/courses")
+    @GetMapping("/all")
     public Iterable<Course> getAllCourses() {
         return coursesService.getAll();
     }
 
-    @PostMapping("/courses")
+    @PostMapping("/addcourses")
     public ResponseEntity<String> add(@RequestBody Course course) {
         ResponseEntity<String> response;
 

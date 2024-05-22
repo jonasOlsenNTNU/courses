@@ -1,6 +1,7 @@
 package no.ntnu.appdev2024.jolsen.courses.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,12 +13,16 @@ import java.sql.Date;
 public class CourseSessionTime {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonProperty("cid")
     private int cid;
+    @JsonProperty("start")
     private Date start;
+    @JsonProperty("end")
     private Date end;
+    @JsonProperty("location")
     private String location;
-    public CourseSessionTime(Date start, Date end, String location) {
+    public CourseSessionTime(int cid, Date start, Date end, String location) {
+        this.setCid(cid);
         this.setStart(start);
         this.setEnd(end);
         this.setLocation(location);

@@ -17,7 +17,7 @@ public class CourseSessionTimeRestApiController {
     @Autowired
     CourseSessionTimeService courseSessionTimeService;
 
-    @PostMapping("/coursesessiontime")
+    @PostMapping("/addcoursesessiontime")
     public ResponseEntity<String> add(@RequestBody CourseSessionTime courseSessionTime) {
         ResponseEntity<String> response;
 

@@ -6,22 +6,22 @@ import no.ntnu.appdev2024.jolsen.courses.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/api/categories")
 @RestController
+@CrossOrigin
 public class CategoriesRestApiController {
 
     @Autowired
     CategoryService categoryService;
 
 
-    @PostMapping("/categories")
+    @PostMapping("/addcategory")
     public ResponseEntity<String> add(@RequestBody Category category) {
         ResponseEntity<String> response;
+
+        System.out.println(category.toString());
 
         try {
             addCategoryToDatabase(category);

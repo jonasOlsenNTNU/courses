@@ -1,6 +1,7 @@
 package no.ntnu.appdev2024.jolsen.courses.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 @Entity
@@ -9,17 +10,27 @@ public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonProperty("id")
     private int id;
+    @JsonProperty("category")
     private int category;
+    @JsonProperty("title")
     private String title;
+    @JsonProperty("description")
     private String description;
+    @JsonProperty("level")
     private String level;
+    @JsonProperty("credits")
     private int credits;
+    @JsonProperty("hours")
     private int hours;
+    @JsonProperty("certification")
     private String certification;
+    @JsonProperty("keywords")
+    private String keywords;
 
     public Course(int category, String title, String description, String level,
-                  int credits, int hours, String certification) {
+                  int credits, int hours, String certification, String keywords) {
         this.setCategory(category);
         this.setTitle(title);
         this.setDescription(description);
@@ -27,6 +38,7 @@ public class Course {
         this.setCredits(credits);
         this.setHours(hours);
         this.setCertification(certification);
+        this.setKeywords(keywords);
     }
 
     public Course() {}
@@ -63,6 +75,9 @@ public class Course {
         this.certification = certification;
     }
 
+    public void setKeywords(String keywords) {
+        this.keywords = keywords;
+    }
     public int getID() {
         return this.id;
     }

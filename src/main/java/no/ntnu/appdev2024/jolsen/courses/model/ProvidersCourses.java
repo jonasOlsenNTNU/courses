@@ -2,6 +2,7 @@ package no.ntnu.appdev2024.jolsen.courses.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -11,9 +12,13 @@ import jakarta.persistence.Table;
 public class ProvidersCourses {
 
     @Id
+    @JsonProperty("pid")
     private int pid;
+    @JsonProperty("cid")
     private int cid;
+    @JsonProperty("cost")
     private int cost;
+    @JsonProperty("currency")
     private String currency;
 
     public ProvidersCourses(int pid, int cid, int cost, String currency) {

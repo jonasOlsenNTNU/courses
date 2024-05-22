@@ -18,7 +18,7 @@ public class UsersRestApiController {
     UserService userService;
 
 
-    @PostMapping("/users")
+    @PostMapping("/addusers")
     public ResponseEntity<String> add(@RequestBody User user) {
         ResponseEntity<String> response;
 

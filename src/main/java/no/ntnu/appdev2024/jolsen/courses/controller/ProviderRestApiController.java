@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping("/api/provider")
+@RequestMapping("/api/providers")
 @RestController
 public class ProviderRestApiController {
 
@@ -18,7 +18,7 @@ public class ProviderRestApiController {
     ProvidersService providersService;
 
 
-    @PostMapping("/provider")
+    @PostMapping("/addproviders")
     public ResponseEntity<String> add(@RequestBody Provider provider) {
         ResponseEntity<String> response;
 

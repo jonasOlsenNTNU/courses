@@ -2,6 +2,7 @@ package no.ntnu.appdev2024.jolsen.courses.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 @Entity
@@ -9,16 +10,24 @@ import jakarta.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonProperty("id")
     private int id;
+    @JsonProperty("firstName")
     private String firstName;
+    @JsonProperty("lastName")
     private String lastName;
-    private String username;
+    @JsonProperty("userName")
+    private String userName;
+    @JsonProperty("password")
     private String password;
-    public User(String firstName, String lastName, String username, String password) {
+    @JsonProperty("type")
+    private String type;
+    public User(String firstName, String lastName, String userName, String password, String type) {
         this.setFirstName(firstName);
         this.setLastName(lastName);
-        this.setUsername(username);
+        this.setUserName(userName);
         this.setPassword(password);
+        this.setType(type);
     }
 
     public User() {}
@@ -37,14 +46,17 @@ public class User {
         this.lastName = lastName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String username) {
+        this.userName = username;
     }
 
     public void setPassword(String password) {
         this.password = password;
     }
 
+    public void setType(String type) {
+        this.type = type;
+    }
     public int getID() {
         return this.id;
     }
@@ -57,8 +69,8 @@ public class User {
         return this.lastName;
     }
 
-    public String getUsername() {
-        return this.username;
+    public String getUserName() {
+        return this.userName;
     }
 
     public String getPassword() {
@@ -70,7 +82,7 @@ public class User {
     public boolean isValid() {
         return (!this.firstName.isBlank() &&
                 !this.lastName.isBlank() &&
-                !this.username.isBlank() &&
+                !this.userName.isBlank() &&
                 !this.password.isBlank());
     }
 }

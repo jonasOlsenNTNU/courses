@@ -20,7 +20,7 @@ public class ProvidersCoursesRestApiController {
 
 
 
-    @PostMapping("/providerscourses")
+    @PostMapping("/addproviderscourses")
     public ResponseEntity<String> add(@RequestBody ProvidersCourses providersCourses) {
         ResponseEntity<String> response;
 
