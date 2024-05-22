@@ -1,5 +1,5 @@
 
-function showAllCourses() {
+function showAllCourses(courses) {
     showCourseCard(courses, "allCoursesContainer");
 }
 

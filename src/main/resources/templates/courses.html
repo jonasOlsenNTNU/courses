@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head th:insert="components/head"></head>
-<body>
+<body onload='requestData("/courses/all", showAllCourses)'>
 <div class="window">
 
   <section class="navbar" th:insert="components/navbar"></section>
 
-  <main class="pagecontent" onload="requestData('/courses', showAllCourses)">
+  <main class="pagecontent">
 
-    <section class="allCoursesContainer"></section>
+    <section class="CoursesContainer" id="allCoursesContainer" >
+
+       <!-- Section loaded from Javascript -->
+
+    </section>
 
 
 

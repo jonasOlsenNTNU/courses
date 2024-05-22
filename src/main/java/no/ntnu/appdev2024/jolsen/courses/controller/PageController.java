@@ -33,7 +33,7 @@ public class PageController {
     }
 
     @GetMapping("/courses")
-    public String getCources(Model model) {
+    public String getCourses(Model model) {
         return "courses";
     }
 }
