@@ -2,19 +2,17 @@
 <html lang="en">
  <head th:insert="components/head"></head>
   <body>
-   <div class="window">
-       <div class="top" th:insert="components/pageheader"></div>
+    <div class="window">
 
-       <div class="middle">
-           <p>This is a paragraph.</p>
-           <p>This is another paragraph.</p>
+        <section class="navbar" th:insert="components/navbar"></section>
 
-       </div>
+        <main class="pagecontent">
+            <p>This is a paragraph.</p>
+            <p>This is another paragraph.</p>
+        </main>
 
-       <div class ="bottom">
-
-
-       </div>
-   </div>
+        <footer class="footer" th:insert="components/footer"></footer>
+    </div>
+    <script th:src="@{index.js}" defer></script>
   </body>
 </html>

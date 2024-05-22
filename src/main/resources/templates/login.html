@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:insert="components/head"></head>
+
+<body>
+<div class="window">
+
+    <section class="navbar" th:insert="~{components/navbar}"></section>
+
+    <main class="pagecontent">
+
+        <section class="loginWindow">
+            <p class="loginTitle">Login</p>
+
+            <div class="usernameFlow">
+                <p class="usernameInputLabel">Username</p>
+                <input class="usernameInput" type="text" placeholder="...">
+            </div>
+            <div class="passwordFlow">
+                <p class="passwordInputLabel">Password</p>
+                <input class="passwordInput" type="text" placeholder="...">
+            </div>
+
+            <button class="submitLoginInputButton" onclick="submitLoginInputButtonClicked()">Login</button>
+
+            <p>This is another paragraph.</p>
+
+        </section>
+    </main>
+
+    <footer class="footer" th:insert="components/footer"></footer>
+</div>
+<script th:src="@{login.js}" defer></script>
+</body>
+</html>

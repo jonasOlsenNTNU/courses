@@ -1,0 +1,17 @@
+<div class="navbar-container">
+    <a class="logo" onclick="logoClicked()">LCC</a>
+
+    <select class="categories">
+        <option value="none">Categories</option>
+        <option value="test1"> test1</option>
+        <option value="test2">test2</option>
+    </select>
+
+    <input class="searchbar" type="text" placeholder="Search...">
+    <button class="searchbutton" onclick="searchButtonClicked()">Search</button>
+
+    <button class="loginbutton" onclick="loginButtonClicked()">Log in</button>
+    <button class="signupbutton" onclick="signUpButtonClicked()">Sign up</button>
+
+    <script th:src="@{navbar.js}" defer></script>
+</div>

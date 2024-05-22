@@ -1,23 +1,22 @@
 package no.ntnu.appdev2024.jolsen.courses.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 
 @Entity
-public class CourseProvider {
+@Table(name = "Providers")
+public class Provider {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
 
-    public CourseProvider(String name) {
+    public Provider(String name) {
         this.setName(name);
     }
 
-    public CourseProvider() {}
+    public Provider() {}
 
     public void setId(int id) {
         this.id = id;
@@ -35,4 +34,8 @@ public class CourseProvider {
         return this.name;
     }
 
+    @JsonIgnore
+    public boolean isValid() {
+        return (!this.name.isBlank());
+    }
 }

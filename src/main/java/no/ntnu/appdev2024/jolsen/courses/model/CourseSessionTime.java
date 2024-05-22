@@ -1,5 +1,6 @@
 package no.ntnu.appdev2024.jolsen.courses.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,7 +13,7 @@ public class CourseSessionTime {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int courseID;
+    private int cid;
     private Date start;
     private Date end;
     private String location;
@@ -24,8 +25,8 @@ public class CourseSessionTime {
 
     public CourseSessionTime() {}
 
-    public void setCourseID(int courseID) {
-        this.courseID = courseID;
+    public void setCid(int courseID) {
+        this.cid = courseID;
     }
 
     public void setStart(Date start) {
@@ -40,8 +41,8 @@ public class CourseSessionTime {
         this.location = location;
     }
 
-    public int getCourseID() {
-        return this.courseID;
+    public int getCid() {
+        return this.cid;
     }
 
     public Date getStart() {
@@ -54,5 +55,16 @@ public class CourseSessionTime {
 
     public String getLocation() {
         return this.location;
+    }
+
+
+    /**
+     * TODO: Unsure how to implmement.
+     *
+     * @return True if the CourseSessionTime object is valid for the DB.
+     */
+    @JsonIgnore
+    public boolean isValid() {
+        return true;
     }
 }

@@ -1,17 +1,16 @@
 package no.ntnu.appdev2024.jolsen.courses.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "Courses")
 public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int categoryID;
+    private int category;
     private String title;
     private String description;
     private String level;
@@ -19,9 +18,9 @@ public class Course {
     private int hours;
     private String certification;
 
-    public Course(int categoryID, String title, String description, String level,
+    public Course(int category, String title, String description, String level,
                   int credits, int hours, String certification) {
-        this.setCategoryID(categoryID);
+        this.setCategory(category);
         this.setTitle(title);
         this.setDescription(description);
         this.setLevel(level);
@@ -36,8 +35,8 @@ public class Course {
         this.id = id;
     }
 
-    public void setCategoryID(int categoryID) {
-        this.categoryID = categoryID;
+    public void setCategory(int category) {
+        this.category = category;
     }
 
     public void setTitle(String title) {
@@ -68,8 +67,8 @@ public class Course {
         return this.id;
     }
 
-    public int getCategoryID() {
-        return this.categoryID;
+    public int getCategory() {
+        return this.category;
     }
 
     public String getTitle() {
@@ -94,6 +93,17 @@ public class Course {
 
     public String getCertification() {
         return this.certification;
+    }
+
+    @JsonIgnore
+    public boolean isValid() {
+        return (!title.isBlank() &&
+                !description.isBlank() &&
+                !level.isBlank() &&
+                credits >= 0 &&
+                hours > 0 &&
+                !certification.isBlank());
+
     }
 
 }

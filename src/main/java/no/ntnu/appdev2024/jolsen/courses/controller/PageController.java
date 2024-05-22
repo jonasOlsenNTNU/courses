@@ -11,4 +11,29 @@ public class PageController {
     public String getHome(Model model) {
         return "index";
     }
+
+    @GetMapping("/about")
+    public String getAbout(Model model) {
+        return "about";
+    }
+
+    @GetMapping("/contact")
+    public String getContact(Model model) {
+        return "contact";
+    }
+
+    @GetMapping("/login")
+    public String getLogin(Model model) {
+        return "login";
+    }
+
+    @GetMapping("/signup")
+    public String getSignup(Model model) {
+        return "signup";
+    }
+
+    @GetMapping("/courses")
+    public String getCources(Model model) {
+        return "courses";
+    }
 }

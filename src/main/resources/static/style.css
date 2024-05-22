@@ -1,8 +1,154 @@
 
-.top {
-    float: left
+
+/* Universal styles. These are relevant for all webpages in the domain. */
+
+/* Window */
+.window {
+    width: 100%;
+    height: 1000px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100px auto 100px;
+    grid-template-areas:
+            "navbar"
+            "pagecontent"
+            "footer";
+}
+
+/* Navigation Bar */
+
+.navbar {
+    background-color: lightblue;
+    width: 100%;
+    /*position: fixed;*/
+    grid-area: navbar;
+    }
+
+.navbar-container {
+    display: flex;
 }
 
 .logo {
     font-style: italic;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.categories {
+    width: 100px;
+    height: 20px;
+    margin-top: 35px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.searchbar {
+
+    width: 60%;
+    height: 20px;
+    margin-left: 100px;
+    margin-top: 35px;
+}
+
+.searchbutton {
+    height: 25px;
+    width: 60px;
+    margin-top: 35px;
+}
+
+.loginbutton {
+    width: 60px;
+    height: 35px;
+    margin-left: 10px;
+    margin-top:30px;
+}
+
+.signupbutton {
+    width: 60px;
+    height: 35px;
+    margin-left: 10px;
+    margin-top: 30px;
+}
+
+/* Footer */
+
+.footer {
+    float: bottom;
+    background-color: coral;
+    grid-area: footer;
+}
+
+.footer-container {
+    display: flex;
+}
+
+.footer_link_about {
+    padding-left: 20px;
+}
+
+.footer_link_contact {
+    padding-left: 20px;
+}
+
+/* Page Content */
+.pagecontent {
+    /*position: fixed; */
+    padding: 10px;
+    background-color: bisque;
+    grid-area: pagecontent;
+}
+
+
+/* Login Page */
+
+/* Stylesheet for elements inside the "pagecontent" div class on the login page.
+/templates/login.html */
+
+.loginWindow {
+    width: 50%;
+    min-width: 400px;
+    height: 300px;
+    border: 2px solid black;
+    padding: 10px;
+    margin: auto;
+}
+
+.loginTitle {
+    font-size: 2rem;
+    margin-left: 50%;
+}
+
+.usernameFlow {
+    display: inline-flex;
+    margin-left: 10px;
+}
+
+.usernameInputLabel {
+
+}
+
+.usernameInput {
+    height: 1rem;
+    margin: 1em;
+}
+
+.passwordFlow {
+    display: inline-flex;
+    margin-left: 10px;
+}
+
+.passwordInput {
+    height: 1rem;
+    margin: 1em;
+}
+
+.submitLoginInputButton {
+    margin-left: 50%;
+    margin-top: 1em;
+}
+
+::placeholder {
+    color: darkgrey;
 }

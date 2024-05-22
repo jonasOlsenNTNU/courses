@@ -1,12 +1,11 @@
 package no.ntnu.appdev2024.jolsen.courses.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "Users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -66,4 +65,12 @@ public class User {
         return this.password;
     }
 
+
+    @JsonIgnore
+    public boolean isValid() {
+        return (!this.firstName.isBlank() &&
+                !this.lastName.isBlank() &&
+                !this.username.isBlank() &&
+                !this.password.isBlank());
+    }
 }

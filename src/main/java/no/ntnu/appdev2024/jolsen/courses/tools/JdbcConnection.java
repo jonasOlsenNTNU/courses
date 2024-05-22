@@ -1,4 +1,6 @@
-package no.ntnu.appdev2024.jolsen.courses;
+package no.ntnu.appdev2024.jolsen.courses.tools;
+
+import org.springframework.beans.factory.annotation.Value;
 
 import java.sql.*;
 
@@ -8,9 +10,12 @@ import java.sql.*;
 public class JdbcConnection {
 
     /**
-     * Reference to the established connecition.
+     * Reference to the established connection.
      */
     private Connection connection;
+
+    //@Value("${spring.datasource.url}")
+    private String dbURL = "jdbc:mysql://localhost:3306/lcon";
 
 
     /**
@@ -38,26 +43,31 @@ public class JdbcConnection {
     /**
      * Establish connection to the SQL database.
      *
-     * @param host Host of the database (localhost, IP address or hostname.
-     * @param port TCP port number (3306 by default)
-     * @param database Database name
      * @param user SQL user
      * @param password SQL user password
      * @throws Exception Throws exception when connection not successful.
      */
-    public void connect(String host, int port, String database, String user, String password)
+    public void connect(String user, String password)
             throws Exception {
-        connection = DriverManager.getConnection("jdbc:mysql//" + host + ":" + port + "/"
-                + database + "?user=" + user + "&password=" + password);
+        connection = DriverManager.getConnection(dbURL + "?user=" + user + "&password=" + password);
     }
 
     /**
      * Check if connection to the database is established.
      *
-     * @return True when the ceonnection is established, false otherwise.
+     * @return True when the connection is established, false otherwise.
      */
     public boolean isConnected() {
         return connection != null;
+    }
+
+    /**
+     * Use to get the connection to the
+     *
+     * @return Connection to the database
+     */
+    public Connection getConnection() {
+        return this.connection;
     }
 
 
