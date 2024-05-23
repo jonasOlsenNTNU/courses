@@ -30,7 +30,7 @@ function createCourseElement(course) {
     courseDescription.innerHTML = course.description;
     courseElement.appendChild(courseDescription);
     const courseLevel = document.createElement("p");
-    courseLevel.innerHTML = course.level;
+    courseLevel.innerHTML = "Difficulty: " + course.level;
     courseElement.appendChild(courseLevel);
     const courseHours = document.createElement("p");
     courseHours.innerHTML = "Hours per week: " + course.hours;
