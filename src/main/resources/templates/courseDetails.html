@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:insert="components/head"></head>
+<body onload='requestData("/courses/coursedetails" + window.location.search, showCourseDetails)'>
+<div class="window">
+
+  <section class="navbar" th:insert="components/navbar"></section>
+
+  <main class="pagecontent">
+
+    <section class="courseContainer" id="courseDetailsContainer">
+
+    </section>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+  </main>
+
+  <footer class="footer" th:insert="components/footer"></footer>
+</div>
+<script th:src="@{courseDetails.js}" defer></script>
+</body>
+</html>

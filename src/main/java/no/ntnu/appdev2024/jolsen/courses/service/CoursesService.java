@@ -5,6 +5,8 @@ import no.ntnu.appdev2024.jolsen.courses.repository.CoursesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class CoursesService {
     @Autowired
@@ -12,6 +14,11 @@ public class CoursesService {
 
     public Iterable<Course> getAll() {
         return coursesRepository.findAll();
+    }
+
+    public Course findCourseById(Integer id) {
+        Optional<Course> course = coursesRepository.findById(id);
+        return course.orElse(null);
     }
 
     public void saveCourse(Course course) {

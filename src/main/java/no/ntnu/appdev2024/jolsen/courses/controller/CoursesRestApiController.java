@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RequestMapping("/api/courses")
 @RestController
 public class CoursesRestApiController {
@@ -41,6 +43,18 @@ public class CoursesRestApiController {
 
         coursesService.saveCourse(course);
 
+    }
+
+    @RequestMapping("/coursedetails")
+    public ResponseEntity<Course> getCourseByTitle(@RequestParam Integer id) {
+        ResponseEntity<Course> response;
+        Course course = coursesService.findCourseById(id);
+        if(course != null) {
+            response = new ResponseEntity<>(course, HttpStatus.OK);
+        } else {
+            response = new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return response;
     }
 
 }

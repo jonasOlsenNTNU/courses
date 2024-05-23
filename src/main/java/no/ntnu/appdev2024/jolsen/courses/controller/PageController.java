@@ -36,4 +36,9 @@ public class PageController {
     public String getCourses(Model model) {
         return "courses";
     }
+
+    @GetMapping("/coursedetails")
+    public String getCourseDetails(Model mode) {
+        return "courseDetails";
+    }
 }
