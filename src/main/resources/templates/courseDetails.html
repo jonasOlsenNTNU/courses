@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head th:insert="components/head"></head>
-<body onload='requestData("/courses/coursedetails" + window.location.search, showCourseDetails)'>
+<body onload='loadData()'>
 <div class="window">
 
   <section class="navbar" th:insert="components/navbar"></section>
@@ -9,11 +9,14 @@
   <main class="pagecontent">
 
     <section class="courseContainer" id="courseDetailsContainer">
-
+      <!--- Loaded by JS --->
+      <p>Loading ...</p>
     </section>
 
-    <p>This is a paragraph.</p>
-    <p>This is another paragraph.</p>
+    <section class="providersContainer" id="providerDetailsContainer">
+      <!--- Loaded by JS --->
+    </section>
+
   </main>
 
   <footer class="footer" th:insert="components/footer"></footer>
